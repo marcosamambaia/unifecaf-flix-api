@@ -1,0 +1,30 @@
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: unifecaf_mysql_compose
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: unifecaf_flix
+      MYSQL_USER: unifecaf
+      MYSQL_PASSWORD: senha123
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  backend:
+    build: .
+    container_name: unifecaf_backend
+    restart: always
+    depends_on:
+     - mysql
+    environment:
+      DATABASE_URL: "mysql://unifecaf:senha123@mysql:3306/unifecaf_flix?ssl=false"
+    ports:
+      - "3000:3000"
+
+
+volumes:
+  mysql_data:
