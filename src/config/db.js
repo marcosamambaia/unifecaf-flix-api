@@ -1,4 +1,11 @@
-const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
+const mysql = require("mysql2/promise");
 
-module.exports = prisma;
+const pool = mysql.createPool({
+  host: "localhost",   // ou "mysql" se rodar dentro do Docker
+  user: "unifecaf",
+  password: "senha123",
+  database: "unifecaf_flix",
+  port: 3307           // se rodar fora do Docker
+});
+
+module.exports = pool;
