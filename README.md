@@ -135,8 +135,10 @@ Exemplo de retorno esperado:
 3) FILTRAR FILMES POR NOME OU SINOPSE
 -------------------------------------------
 Método: GET
-URL: ´´´ http://localhost:3000/v1/controle-filmes/filtro/filme?nome=Matrix
-´´´
+URL: 
+```
+http://localhost:3000/v1/controle-filmes/filtro/filme?nome=Matrix
+```
 Exemplo de retorno esperado:
 [
   {
