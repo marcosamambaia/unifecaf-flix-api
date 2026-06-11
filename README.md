@@ -64,7 +64,7 @@ Passos:
    ```
 3. Suba os containers:
    ```
-   $ sudo docker-compose up -d
+   $ sudo docker compose up -d
    ```
 5. Acesse a API em:
    ```
@@ -202,10 +202,18 @@ STATUS HTTP ESPERADOS
 Em alguns casos, pode ocorrer erro de socket no Docker.
 Para corrigir, utilize os seguintes comandos:
 ```
-sudo systemctl stop docker.socket
-sudo systemctl stop docker
-sudo rm -f /var/run/docker.sock
-sudo systemctl start docker
+# Reiniciar o serviço do Docker (caso precise no futuro)
+sudo systemctl restart docker
+
+# Verificar se o Docker está rodando
+sudo systemctl status docker
+
+# Listar containers ativos
+docker ps
+
+# Subir seu projeto com Docker Compose
+docker compose up -d
+
 ```
 -------------------------------------------
 Esses comandos reiniciam o serviço Docker e 
