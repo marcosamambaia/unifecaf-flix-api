@@ -58,16 +58,20 @@ Pré-requisitos:
 
 Passos:
 1. Clone o repositório:
+   ```
    $ git clone https://github.com/marcosamambaia/unifecaf-flix-api.git
    $ cd unifecaf-flix-api
-
-2. Suba os containers:
+   ```
+3. Suba os containers:
+   ```
    $ sudo docker-compose up -d
-
-3. Acesse a API em:
+   ```
+5. Acesse a API em:
+   ```
    http://localhost:3000
+   ```
 
-4. Banco de dados disponível em:
+6. Banco de dados disponível em:
    host: localhost
    port: 3307
    user: unifecaf
@@ -76,8 +80,10 @@ Passos:
    root user: root
    root password: root123
 
-5. Para iniciar o backend fora do Docker:
+7. Para iniciar o backend fora do Docker:
+   ```
    $ npm run dev
+   ```
 
 -----------------------------------------------------------
 ENDPOINTS PRINCIPAIS
@@ -98,8 +104,10 @@ ENDPOINTS PRINCIPAIS
 1) LISTAR TODOS OS FILMES
 -------------------------------------------
 Método: GET
-URL: http://localhost:3000/v1/controle-filmes/filme
-
+URL:
+```
+http://localhost:3000/v1/controle-filmes/filme
+```
 Exemplo de retorno esperado:
 [
   {
@@ -118,8 +126,10 @@ Exemplo de retorno esperado:
 2) BUSCAR FILME POR ID
 -------------------------------------------
 Método: GET
-URL: http://localhost:3000/v1/controle-filmes/filme/3
-
+URL:
+```
+http://localhost:3000/v1/controle-filmes/filme/3
+```
 Exemplo de retorno esperado:
 {
   "id": 3,
@@ -152,7 +162,10 @@ Exemplo de retorno esperado:
 ]
 
 Outro exemplo:
-URL: http://localhost:3000/v1/controle-filmes/filtro/filme?nome=realidade
+URL:
+```
+http://localhost:3000/v1/controle-filmes/filtro/filme?nome=realidade
+```
 --> Deve retornar o filme Matrix, pois a palavra aparece na sinopse.
 
 -------------------------------------------
@@ -179,12 +192,12 @@ STATUS HTTP ESPERADOS
 
 Em alguns casos, pode ocorrer erro de socket no Docker.
 Para corrigir, utilize os seguintes comandos:
-
+```
 sudo systemctl stop docker.socket
 sudo systemctl stop docker
 sudo rm -f /var/run/docker.sock
 sudo systemctl start docker
-
+```
 -------------------------------------------
 Esses comandos reiniciam o serviço Docker e 
 removem o socket corrompido, permitindo que 
