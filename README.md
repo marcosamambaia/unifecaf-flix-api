@@ -72,6 +72,7 @@ Passos:
    ```
 
 6. Banco de dados disponível em:
+ ```
    host: localhost
    port: 3307
    user: unifecaf
@@ -79,8 +80,9 @@ Passos:
    database: unifecaf_flix
    root user: root
    root password: root123
+ ```
 
-7. Para iniciar o backend fora do Docker:
+8. Para iniciar o backend fora do Docker:
    ```
    $ npm run dev
    ```
@@ -88,6 +90,7 @@ Passos:
 -----------------------------------------------------------
 ENDPOINTS PRINCIPAIS
 -----------------------------------------------------------
+```
 - GET /v1/controle-filmes/filme
     -> lista todos os filmes
 
@@ -96,6 +99,7 @@ ENDPOINTS PRINCIPAIS
 
 - GET /v1/controle-filmes/filtro/filme?nome=xxx
     -> filtra filmes por nome ou sinopse
+```
 
 ===========================================
         TESTES DA API - UniFECAF Flix
@@ -109,6 +113,7 @@ URL:
 http://localhost:3000/v1/controle-filmes/filme
 ```
 Exemplo de retorno esperado:
+```
 [
   {
     "id": 1,
@@ -120,7 +125,7 @@ Exemplo de retorno esperado:
   },
   ...
 ]
-
+```
 -------------------------------------------
 
 2) BUSCAR FILME POR ID
@@ -131,6 +136,7 @@ URL:
 http://localhost:3000/v1/controle-filmes/filme/3
 ```
 Exemplo de retorno esperado:
+```
 {
   "id": 3,
   "titulo": "Cidade de Deus",
@@ -139,7 +145,7 @@ Exemplo de retorno esperado:
   "genero": "Drama",
   "sinopse": "A ascensão do crime organizado em uma favela do Rio..."
 }
-
+```
 -------------------------------------------
 
 3) FILTRAR FILMES POR NOME OU SINOPSE
@@ -150,6 +156,7 @@ URL:
 http://localhost:3000/v1/controle-filmes/filtro/filme?nome=Matrix
 ```
 Exemplo de retorno esperado:
+```
 [
   {
     "id": 1,
@@ -160,7 +167,7 @@ Exemplo de retorno esperado:
     "sinopse": "Um hacker descobre que vive em uma realidade simulada..."
   }
 ]
-
+```
 Outro exemplo:
 URL:
 ```
@@ -172,9 +179,11 @@ http://localhost:3000/v1/controle-filmes/filtro/filme?nome=realidade
 
 STATUS HTTP ESPERADOS
 -------------------------------------------
+```
 200 - Sucesso (dados retornados)
 404 - Filme não encontrado (quando busca por ID inexistente)
 500 - Erro interno (quando há problema na query ou no servidor)
+```
 
 ===========================================
 
